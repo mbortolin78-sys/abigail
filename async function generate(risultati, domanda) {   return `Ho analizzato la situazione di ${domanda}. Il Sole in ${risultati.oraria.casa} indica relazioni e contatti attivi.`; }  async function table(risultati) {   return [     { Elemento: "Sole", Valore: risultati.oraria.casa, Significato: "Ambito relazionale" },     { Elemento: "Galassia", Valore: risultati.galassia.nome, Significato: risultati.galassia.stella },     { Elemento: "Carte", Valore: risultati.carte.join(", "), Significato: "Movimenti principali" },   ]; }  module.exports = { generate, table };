@@ -1,0 +1,13 @@
+async function generate(risultati, domanda) {
+  return `Ho analizzato la situazione di ${domanda}. Il Sole in ${risultati.oraria.casa} indica relazioni e contatti attivi.`;
+}
+
+async function table(risultati) {
+  return [
+    { Elemento: "Sole", Valore: risultati.oraria.casa, Significato: "Ambito relazionale" },
+    { Elemento: "Galassia", Valore: risultati.galassia.nome, Significato: risultati.galassia.stella },
+    { Elemento: "Carte", Valore: risultati.carte.join(", "), Significato: "Movimenti principali" },
+  ];
+}
+
+module.exports = { generate, table };
